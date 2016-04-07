@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+    <html ng-app = 'myApp'>
+        <head>
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.min.js'></script>
+            <script src='app.js'></script>
+            <script src='service.js'></script>
+            <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+            <link rel='stylesheet' href='style.css'>
+        </head>
+        <body>
+            <div ng-controller = 'mainCtrl as vm' class = 'container'>
+                <p id = 'p' class = 'bg-success'> 
+                    <span>Want to save some time? Type the XMEN name you want!</span> 
+                </p>
+                <input id = 'in' type = 'text' ng-model = 'search'>
+                <table id = 'table' class = 'table table-bordered table-hover'>
+                    <tr style = 'background-color: #f2f2f2'>
+                        <td> Character </td><td> Code </td><td> Name</td>
+                    </tr>
+                    <tr ng-repeat = 'x in vm.result = (vm.data.cast|filter:search|orderBy:"character")'>
+                        <td> {{x.character}} </td>
+                        <td> {{x.code}} </td>
+                        <td> {{x.name}} </td>
+                    </tr>
+                </table>
+                <div id = 'warning' ng-hide='vm.result.length != 0' class='bg-danger'>No XMEN available</div>
+
+            </div>
+            
+        </body>
+    </html>

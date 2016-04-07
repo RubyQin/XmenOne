@@ -1,0 +1,16 @@
+#p, #warning {
+  width: 503px;
+  height: 40px;
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 9px 6px;
+}
+
+#table{
+  margin-top: 10px;
+}
+
+#in {
+  margin-top: 1px;
+  width: 503px;
+}
