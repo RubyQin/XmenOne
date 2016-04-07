@@ -26,6 +26,23 @@
                 <div id = 'warning' ng-hide='vm.result.length != 0' class='bg-danger'>No XMEN available</div>
 
             </div>
+
+            <div ng-controller = 'mainCtrl as vm' class='container'>
+                <p id = 'p' class = 'bg-success'> 
+                    <span>How XMEN look like</span> 
+                </p>
+                <table class = 'table table-bordered table-hover' style='margin-top: 15px;'>
+                    <tr>
+                        <td> Code </td><td> Name </td><td> Image </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select ng-model="vm.selection" ng-options='x.code for x in vm.data.cast'></select>
+                        </td>
+                        <td>{{vm.selection.name}}</td>
+                        <td><img style='height: 240px; width: 190px;' ng-src='{{vm.selection.img}}'/></td>
+                </table>
+            </div>
             
         </body>
     </html>
